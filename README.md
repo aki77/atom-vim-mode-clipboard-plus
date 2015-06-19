@@ -4,6 +4,11 @@ Add clipboard-plus feature to vim-mode.
 
 See [clipboard-plus](https://atom.io/packages/clipboard-plus) for details.
 
+## Requirement
+
+* [vim-mode](https://atom.io/packages/vim-mode)
+* [clipboard-plus](https://atom.io/packages/clipboard-plus)
+
 ## Keymap
 
 No keymap by default.
