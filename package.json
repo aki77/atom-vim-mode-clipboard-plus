@@ -1,0 +1,28 @@
+{
+  "name": "vim-mode-clipboard-plus",
+  "main": "./lib/main",
+  "version": "0.0.0",
+  "description": "Add clipboard-plus feature to vim-mode",
+  "keywords": [
+    "vim",
+    "clipboard"
+  ],
+  "repository": "https://github.com/aki77/atom-vim-mode-clipboard-plus",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-package-dependencies": "~1.0.3"
+  },
+  "consumedServices": {
+    "clipboard-plus": {
+      "versions": {
+        "^0.1.0": "consumeClipboardPlus"
+      }
+    }
+  },
+  "package-dependencies": {
+    "clipboard-plus": ">=0.3.0"
+  }
+}
