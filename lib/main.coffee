@@ -1,14 +1,33 @@
+{CompositeDisposable} = require 'atom'
+
 module.exports =
+  subscriptions: null
+  namespace: null
+
+  config:
+    useVimModePlus:
+      description: 'Use vim-mode-plus'
+      type: 'boolean'
+      default: false
+
   activate: ->
-    atom.config.set('vim-mode.useClipboardAsDefaultRegister', true)
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add(atom.config.observe('vim-mode-clipboard-plus.useVimModePlus', (value) =>
+      @namespace = if value then 'vim-mode-plus' else 'vim-mode'
+      atom.config.set("#{@namespace}.useClipboardAsDefaultRegister", true)
+    ))
+
     @installPackageDependencies()
 
   deactivate: ->
+    @subscriptions?.dispose()
+    @subscriptions = null
+    @namespace = null
 
   consumeClipboardPlus: ({registerPasteAction}) ->
-    registerPasteAction((editor, item) ->
+    registerPasteAction((editor, item) =>
       editorElement = atom.views.getView(editor)
-      atom.commands.dispatch(editorElement, 'vim-mode:put-after')
+      atom.commands.dispatch(editorElement, "#{@namespace}:put-after")
     )
 
   installPackageDependencies: ->
