@@ -19,7 +19,7 @@ edit `~/.atom/keymap.cson`
 '.platform-darwin atom-text-editor.vim-mode:not(.insert-mode)':
   'ctrl-p': 'clipboard-plus:toggle'
 
-'.platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
+'.platform-win32 atom-text-editor.vim-mode:not(.insert-mode), .platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
   'alt-p': 'clipboard-plus:toggle'
 ```
 
