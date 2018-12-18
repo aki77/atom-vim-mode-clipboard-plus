@@ -2,7 +2,7 @@
   "name": "vim-mode-clipboard-plus",
   "main": "./lib/main",
   "version": "0.2.0",
-  "description": "Add clipboard-plus feature to vim-mode",
+  "description": "Add clipboard-plus feature to vim-mode-plus",
   "keywords": [
     "vim",
     "clipboard"
