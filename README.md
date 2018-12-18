@@ -16,10 +16,10 @@ No keymap by default.
 edit `~/.atom/keymap.cson`
 
 ```coffeescript
-'.platform-darwin atom-text-editor.vim-mode:not(.insert-mode)':
+'.platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'ctrl-p': 'clipboard-plus:toggle'
 
-'.platform-win32 atom-text-editor.vim-mode:not(.insert-mode), .platform-linux atom-text-editor.vim-mode:not(.insert-mode)':
+'.platform-win32 atom-text-editor.vim-mode-plus:not(.insert-mode), .platform-linux atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'alt-p': 'clipboard-plus:toggle'
 ```
 
