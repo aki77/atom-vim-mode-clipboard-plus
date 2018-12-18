@@ -4,19 +4,8 @@ module.exports =
   subscriptions: null
   namespace: null
 
-  config:
-    useVimModePlus:
-      description: 'Use vim-mode-plus'
-      type: 'boolean'
-      default: false
-
   activate: ->
-    @subscriptions = new CompositeDisposable
-    @subscriptions.add(atom.config.observe('vim-mode-clipboard-plus.useVimModePlus', (value) =>
-      @namespace = if value then 'vim-mode-plus' else 'vim-mode'
-      atom.config.set("#{@namespace}.useClipboardAsDefaultRegister", true)
-    ))
-
+    atom.config.set('vim-mode-plus.useClipboardAsDefaultRegister', true)
     @installPackageDependencies()
 
   deactivate: ->
